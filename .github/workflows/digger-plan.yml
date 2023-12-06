@@ -29,6 +29,7 @@ jobs:
         uses: diggerhq/digger@feat/report-additional-output
         with:
           setup-aws: true
+          no-backend: true
           
           #Uncomment below line if using OIDC
           #aws-role-to-assume: arn:aws:sts::{secrets.AccountID}:assumed-role/{secrets.RoleName}/{FunctionName}

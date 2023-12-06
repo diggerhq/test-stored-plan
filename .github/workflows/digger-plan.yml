@@ -21,6 +21,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # Unlike GCP; the role assumption is handled inline 
+      - name: Setup Infracost
+        uses: infracost/actions/setup@v2
+        with:
+          api-key: ${{ secrets.INFRACOST_API_KEY }}
       - name: digger run
         uses: diggerhq/digger@v0.2.0
         with:

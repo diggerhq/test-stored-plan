@@ -1,3 +1,11 @@
 projects:
 - name: production
   dir: prod
+
+workflows:
+  production:
+    plan:
+      steps:
+        - init
+        - plan
+        - run: infracost breakdown --path=.

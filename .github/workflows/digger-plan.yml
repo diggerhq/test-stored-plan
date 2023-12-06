@@ -26,7 +26,7 @@ jobs:
         with:
           api-key: ${{ secrets.INFRACOST_API_KEY }}
       - name: digger run
-        uses: diggerhq/digger@v0.2.0
+        uses: diggerhq/digger@feat/report-additional-output
         with:
           setup-aws: true
           

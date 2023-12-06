@@ -1,9 +1,10 @@
 projects:
 - name: production
   dir: prod
+  workflow: with-infracost
 
 workflows:
-  production:
+  with-infracost:
     plan:
       steps:
         - init

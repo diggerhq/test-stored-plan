@@ -20,7 +20,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      # Unlike GCP; the role assumption is handled inline 
+      - name: 'Fetch main branch'
+        run: |
+          git fetch origin main --depth 1
       - name: Setup Infracost
         uses: infracost/actions/setup@v2
         with:

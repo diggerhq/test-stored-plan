@@ -26,7 +26,7 @@ jobs:
         with:
           api-key: ${{ secrets.INFRACOST_API_KEY }}
       - name: digger run
-        uses: diggerhq/digger@feat/empty-plan-handling
+        uses: diggerhq/digger@feat/expose-env-vars
         with:
           setup-aws: true
           no-backend: true

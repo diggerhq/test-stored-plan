@@ -1,11 +1,6 @@
 name: Digger Plan
 
 on:
-  pull_request:
-    branches: [ "main" ]
-    types: [ opened, synchronize ]
-  issue_comment:
-    types: [created]
   workflow_dispatch:
 
 
@@ -20,28 +15,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: 'Fetch main branch'
-        run: |
-          git fetch origin main --depth 1
-      - name: Setup Infracost
-        uses: infracost/actions/setup@v2
-        with:
-          api-key: ${{ secrets.INFRACOST_API_KEY }}
       - name: digger run
         uses: diggerhq/digger@feat/expose-env-vars
         with:
           setup-aws: true
-          no-backend: true
-          
-          #Uncomment below line if using OIDC
-          #aws-role-to-assume: arn:aws:sts::{secrets.AccountID}:assumed-role/{secrets.RoleName}/{FunctionName}
-         
-          #Comment the following two lines out if using OIDC. 
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          ##End comment block
           aws-region: us-east-1
+          digger-hostname: 'https://cloud.uselemon.cloud'
+          digger-organisation: 'digger'
+          digger-token: ${{ secrets.DIGGER_TOKEN }}
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
          

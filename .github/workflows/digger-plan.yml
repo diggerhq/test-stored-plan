@@ -1,8 +1,13 @@
-name: Digger Plan
+name: Digger Workflow
 
 on:
   workflow_dispatch:
-
+    inputs:
+      id:
+        description: 'run identifier'
+        required: false
+      job:
+        required: true
 
 jobs:
   plan:

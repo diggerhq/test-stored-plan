@@ -1,12 +1,3 @@
 projects:
 - name: production
   dir: prod
-  workflow: with-infracost
-
-workflows:
-  with-infracost:
-    plan:
-      steps:
-        - init
-        - plan
-        - run: infracost breakdown --path=. | tee -a $DIGGER_OUT

@@ -6,11 +6,8 @@ terraform {
     }
   }
     backend "s3" {
-    bucket = "digger-s3backend-demo-infracost-append"              # Change if a different S3 bucket name was used for the backend 
-    /* Un-comment to use DynamoDB state locking
-    dynamodb_table = "digger-locktable"      # Change if a different DynamoDB table name was used for backend
-    */
-    key    = "terraform/state"
+    bucket = "digger-test-comment-summary"              # Change if a different S3 bucket name was used for the backend 
+    key    = "terraform/state/prod"
     region = "us-east-1"
   }
 }

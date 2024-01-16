@@ -5,7 +5,9 @@ on:
     inputs:
       id:
         description: 'run identifier'
-        required: false
+        required: true
+      comment_id:
+        required: true
       job:
         required: true
 

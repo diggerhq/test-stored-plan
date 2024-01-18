@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: digger run
-        uses: diggerhq/digger@feat/comments-ux-improvement-in-be
+        uses: diggerhq/digger@fix/github-workspace-plan-upload
         with:
           setup-aws: true
           no-backend: true

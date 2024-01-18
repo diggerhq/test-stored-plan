@@ -34,6 +34,7 @@ resource "aws_subnet" "vpc_subnet" {
   }
 }
 
+
 resource "aws_security_group" "security_group" {
   vpc_id      = aws_vpc.vpc_network.id
   name_prefix = "terraform-"

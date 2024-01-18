@@ -3,6 +3,3 @@ projects:
   dir: dev
 - name: production
   dir: prod
-
-
-  

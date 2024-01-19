@@ -24,6 +24,7 @@ jobs:
         with:
           setup-aws: true
           no-backend: true
+          disable-locking: true
           upload-plan-destination: github
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

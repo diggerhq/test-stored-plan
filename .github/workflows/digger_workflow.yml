@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: digger run
-        uses: diggerhq/digger@fix/github-workspace-plan-upload
+        uses: diggerhq/digger@fix/plan-file-persistence
         with:
           setup-aws: true
           no-backend: true

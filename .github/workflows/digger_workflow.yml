@@ -31,5 +31,6 @@ jobs:
           aws-region: us-east-1
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
          

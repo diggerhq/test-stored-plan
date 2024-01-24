@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: digger run
-        uses: diggerhq/digger@fix/plan-file-persistence
+        uses: diggerhq/digger@latest
         with:
           setup-aws: true
           no-backend: true

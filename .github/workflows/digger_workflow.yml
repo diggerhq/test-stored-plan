@@ -1,12 +1,15 @@
 name: Digger Workflow
 
 on:
-  pull_request:
-    branches: [ "main" ]
-    types: [ opened, synchronize ]
-  issue_comment:
-    types: [created]
   workflow_dispatch:
+    inputs:
+      id:
+        description: 'run identifier'
+        required: true
+      comment_id:
+        required: true
+      job:
+        required: true
 
 jobs:
   plan:
@@ -20,17 +23,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: digger run
-        uses: diggerhq/digger@latest
+        uses: diggerhq/digger@feat/comments-ux-improvments
         with:
           setup-aws: true
-          no-backend: true
-          disable-locking: true
-          upload-plan-destination: github
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+          digger-hostname: 'https://cloud.uselemon.cloud'
+          digger-organisation: 'ZIJ'
+          digger-token: ${{ secrets.DIGGER_TOKEN }}
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-         

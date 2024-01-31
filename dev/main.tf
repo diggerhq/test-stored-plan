@@ -6,7 +6,7 @@ terraform {
     }
   }
     backend "s3" {
-    bucket = "digger-test-stored-plan"              # Change if a different S3 bucket name was used for the backend 
+    bucket = "digger-test-stored-plan-new"              # Change if a different S3 bucket name was used for the backend 
     key    = "terraform/state/dev"
     region = "us-east-1"
   }

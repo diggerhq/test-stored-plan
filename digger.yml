@@ -1,14 +1,6 @@
 projects:
-- name: myapp-dev
-  dir: myapp-dev
-- name: myapp-prod
-  dir: myapp-prod
-- name: foo-dev
-  dir: foo-dev
-- name: foo-prod
-  dir: foo-prod
-- name: bar-dev
-  dir: bar-dev
-- name: bar-prod
-  dir: bar-prod
+- name: development
+  dir: dev
+- name: production
+  dir: prod
   

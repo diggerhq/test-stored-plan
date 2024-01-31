@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: digger run
-        uses: diggerhq/digger@latest
+        uses: diggerhq/digger@fix/stored-plan-override
         with:
           setup-aws: true
           no-backend: true
